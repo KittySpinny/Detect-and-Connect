@@ -95,6 +95,7 @@ def SensorReadings():
     line = ser.readline()
     x = datetime.datetime.now()
     Data.setStart(data,x.strftime("%Y-%m-%d %H:%M:%S"))
+    Detect()	
     line = ser.readline()
     x = datetime.datetime.now()
     Data.setEnd(data,x.strftime("%Y-%m-%d %H:%M:%S"))
@@ -102,5 +103,5 @@ def SensorReadings():
     Data.sendToServer(data)
 
 if __name__ == "__main__":
-   
+	SensorReadings()   
 
